@@ -50,6 +50,10 @@ input:focus {
     color: #000000;
 }
 
+input:focus::placeholder {
+    color: transparent;
+  }
+
 button, .items, input {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
