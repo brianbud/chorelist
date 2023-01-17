@@ -24,7 +24,9 @@ function render(items) {
 function addToList() {
   let input = inputEl.value;
 
-  if (input) {
+  if (myItems.includes(input)) {
+    return; //checks for duplicate
+  } else if (input) {
     myItems.push(input);
     localStorage.setItem("myItems", JSON.stringify(myItems));
     listItemsEl.innerHTML += `<div class="items">${input}</div>`;
@@ -35,5 +37,7 @@ function addToList() {
 }
 
 function deleteAllItems() {
+  localStorage.clear();
+  myItems = [];
   listItemsEl.innerHTML = "";
 }
