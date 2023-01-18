@@ -5,13 +5,10 @@ const listItemsEl = document.querySelector(".list-items");
 const completedEl = document.querySelector(".completed-container");
 addBtnEl.addEventListener("click", addToList);
 deleteBtnEl.addEventListener("click", deleteAllItems);
-let myItems = [];
-const itemsFromLocalStorage = JSON.parse(localStorage.getItem("myItems"));
 
-if (itemsFromLocalStorage) {
-  myItems = itemsFromLocalStorage;
-  render(myItems);
-}
+let myItems = JSON.parse(localStorage.getItem("myItems")) || [];
+
+render(myItems);
 
 function render(items) {
   let listItems = "";
