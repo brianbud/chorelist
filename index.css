@@ -95,6 +95,15 @@ button {
     background-color: #FF9548;
 }
 
+.completed-container {
+    margin-top: 10px;
+    display: none;
+}
+
+.completed-gif {
+    width: 80%;
+}
+
 @media only screen and (max-width: 600px) {
 
     .container {
