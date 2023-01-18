@@ -13,8 +13,8 @@ render(myItems);
 function render(items) {
   let listItems = "";
 
-  for (let i = 0; i < items.length; i++) {
-    listItems += `<div class="items">${items[i]}</div>`;
+  for (item of items) {
+    listItems += `<div class="items">${item}</div>`;
   }
   listItemsEl.innerHTML = listItems;
 }
@@ -30,8 +30,6 @@ function addToList() {
     localStorage.setItem("myItems", JSON.stringify(myItems));
     listItemsEl.innerHTML += `<div class="items">${input}</div>`;
     inputEl.value = "";
-  } else {
-    return;
   }
 }
 
